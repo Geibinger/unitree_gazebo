@@ -1,0 +1,17 @@
+{
+    "name": "Unitree Gazebo",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "runArgs": [
+        "--privileged",
+        "--env=DISPLAY",
+        "--volume=/tmp/.X11-unix:/tmp/.X11-unix:rw",
+        "--device=/dev/dri"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "postCreateCommand": "/bin/bash .devcontainer/post_create.sh"
+}
